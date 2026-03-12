@@ -1,5 +1,5 @@
 import { model,Schema } from "mongoose";
-const userSchema=new Schema({
+const productSchema=new Schema({
     productId:{
      type:Number,
      required:[true,"id is required"]
@@ -18,4 +18,5 @@ const userSchema=new Schema({
         required:[true,"brand name is required"]
     }
 })
-export const UserModel= model("product",userSchema)
+
+export const UserModel= model("product",productSchema)

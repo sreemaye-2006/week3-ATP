@@ -10,26 +10,26 @@ console.log("result:",result);
 res.status(201).json({message:"user created"})
 });
 productApp.get("/product",async(req,res)=>{
-    let userList=await UserModel.find()
-    res.status(200).json({message:"products",payload:userList})
+    let productList=await UserModel.find()
+    res.status(200).json({message:"products",payload:productList})
 })
 productApp.get("product/:productId",async(req,res)=>{
     const uid=req.params.productId
-    const UserObj=await UserModel.findById(uid)
-    res.status(200).json({message:"product",payload:userObj})
+    const productObj=await UserModel.findById(uid)
+    res.status(200).json({message:"product",payload:productObj})
 
-if(!userObj)
+if(!productObj)
 {
   return  res.status(404).json({message:"product not found"})
 }
 })
 productApp.put("/product/:iproductId",async(req,res)=>{
-    //get mofified user from req
+    //get mofified product from req
     const modifiedProduct=req.body;
     const uid=req.params.id;
-    //find user by id
+    //find product by id
     const updateProduct=await UserModel.findByIdAndUpdate(uid,{$set:{...modifiedProduct}},{new:true, runValidators:true})
-     //update user id
+     //update product id
      res.status(200).json({message:"product modified",payload:updateProduct})
    // send res
 })
@@ -41,4 +41,5 @@ productApp.delete("/product/:ProductId",async(req,res)=>{
         return res.status(404).json({message:"product not found"})
     }
 res.status(200).json({message:"product deleted",payload:deletedProduct})
+
 })

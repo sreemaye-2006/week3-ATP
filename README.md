@@ -1,4 +1,4 @@
-# Week 3 - Minimal Backend
+# Week 3
 
 This repository contains a minimal backend application using Node.js, Express, and MongoDB (Mongoose).
 

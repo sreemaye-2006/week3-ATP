@@ -1,44 +1,4 @@
 
-###read all users
-GET http://localhost:4000/user-api/users/
-Cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpcmlAZ21haWwuY29tIiwiaWF0IjoxNzcyODc1OTYzLCJleHAiOjE3NzI4NzU5NjN9.tQi8hAcNDvSg38IY1_31fMXiubfq8mvkbrPRI3z3LJo; Path=/; HttpOnly; SameSite=Lax
-
-###read  a user by id
-GET  http://localhost:4000/user-api/user/69aa877854904f5a6b9d1fce
-###
-POST http://localhost:4000/user-api/users
-content-Type:application/json
-
-{
-
-"username":"sreeeeeee",
-"password":"sirisreemaye",
-"email":"siri@gmail.com",
-"Age":20
-}
-###
-PUT http://localhost:4000/user-api/user/69aa6b91449686855ba807fe
-content-type:application/json
-
-{
-    
-"username":"sirierderr",
-"password":"werthdfgdk",
-"email":"siri@gmail.com",
-    "Age":20
-}
-###
-DELETE http://localhost:4000/user-api/user/69aa6b91449686855ba807fe
-### user login
-POST http://localhost:4000/user-api/auth
-Content-Type:application/json
-
-{
-
-"email":"siri@gmail.com",
-"password":"sirisreemaye"
-}
-
 
 ###
 GET http://localhost:4000/product-api/product
